@@ -173,14 +173,14 @@ params.addEventListener('change', function(e) {
 });
 
 //---------------------------------------First API Inquery Above, 2nd below------------------------------------------------------------------
- var urlBase2 = 'https://api.mapbox.com/isochrone/v1/mapbox/'; //the same function as above, just with 2 added to the end of the variable names to make them unique
- var lon2 = -87.805833;
- var lat2 = 41.908760;
- var profile = 'driving';
- var minutes = 30;
+//Reusing base from above
+ var lon2 = -87.805833; //the same function as above, just with 2 added to the end of the variable names to make them unique
+ var lat2 = 41.908760; //the same function as above, just with 2 added to the end of the variable names to make them unique
+//reusing travel profile from and time from above since they will match
+
 
  function getIso2() {
-   var query2 = urlBase2 + profile + '/' + lon2 + ',' + lat2 + '?contours_minutes=' + minutes + '&polygons=true&access_token=' + mapboxgl.accessToken; //same as above just with 2 added to the end of the variables to make them unique
+   var query2 = urlBase + profile + '/' + lon2 + ',' + lat2 + '?contours_minutes=' + minutes + '&polygons=true&access_token=' + mapboxgl.accessToken; //same as above just with 2 added to the end of the second point variables to make them unique
 
    $.ajax({
      method: 'GET',
